@@ -1,0 +1,37 @@
+(
+    cava: (
+        framerate: 60,
+        autosens: true,
+        sensitivity: 100,
+
+        lower_cutoff_freq: Some(50),
+        higher_cutoff_freq: Some(10000),
+
+        input: (
+            method: Fifo,
+            source: "/tmp/mpd.fifo",
+            sample_rate: Some(44100),
+            channels: Some(2),
+            sample_bits: Some(16),
+        ),
+
+        smoothing: (
+            noise_reduction: 77,
+            monstercat: false,
+            waves: false,
+        ),
+
+        eq: [],
+    ),
+
+    layout: Split(
+        direction: Vertical,
+        panes: [
+            (size: "4", borders: "ALL", pane: Pane(Header)),
+            (size: "3", pane: Pane(Tabs)),
+            (size: "100%", borders: "ALL", pane: Pane(TabContent)),
+            (size: "3", borders: "ALL", pane: Pane(ProgressBar)),
+        ],
+    ),
+)
+

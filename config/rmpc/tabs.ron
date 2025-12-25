@@ -1,0 +1,20 @@
+  (
+    name: "Queue",
+    pane: Split(
+        direction: Horizontal,
+        panes: [
+            (size: "30%", pane: Pane(AlbumArt)),
+            (
+                size: "70%",
+                pane: Split(
+                    direction: Vertical,
+                    panes: [
+                        (size: "30%", pane: Pane(Queue)),
+                        (size: "70%", pane: Pane(Cava)),
+                    ],
+                ),
+            ),
+        ],
+    ),
+)
+

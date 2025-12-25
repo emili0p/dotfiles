@@ -1,0 +1,21 @@
+# estado / cache
+*.log
+*.pid
+*.state
+database
+Session
+session
+
+# mpd runtime
+config/mpd/database
+config/mpd/log
+config/mpd/pid
+config/mpd/state
+
+# nvim
+config/nvim/.neoconf.json
+
+# backups
+*.save
+*~
+
