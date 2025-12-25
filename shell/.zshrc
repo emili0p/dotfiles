@@ -121,21 +121,11 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-
+# neovim como el manpagger
 export MANPAGER="nvim -c  'Man!'"
-
-
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/emilio/google-cloud-sdk/path.zsh.inc' ]; then . '/home/emilio/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/emilio/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/emilio/google-cloud-sdk/completion.zsh.inc'; fi
 
 # ----- Funciones WTTR -----
 
-# Función interna real
 _clima_do() {
     local location="${1:-}"
     local options="${2:-1A}"
@@ -151,12 +141,10 @@ _p10k_reload() {
 }
 
 
-# Presets como funciones (aceptan lugar opcional)
 clima_actual()   { _clima_do "${1:-}" "0q"  "${2:-es}"; }
 clima_hoy_fn()   { _clima_do "${1:-}" "1A"  "${2:-es}"; }
 clima_detallado_fn() { _clima_do "${1:-}" "2A"  "${2:-es}"; }
 clima_json_fn()  { 
-    # si pasas un lugar, lo usa; si no, consulta ubicación detectada
     if [ -n "${1:-}" ]; then
         curl -fsS "https://wttr.in/${1}?format=j1&lang=${2:-es}"
     else
@@ -164,7 +152,6 @@ clima_json_fn()  {
     fi
 }
 
-# Aliases bonitos (se pueden llamar con guión)
 alias clima-actual='clima_actual'
 alias clima-hoy='clima_hoy_fn'
 alias clima-detallado='clima_detallado_fn'
