@@ -15,9 +15,7 @@
     select_current_song_on_change: false,
     browser_column_widths: [20, 38, 42],
 
-    // ========================
     // Album Art
-    // ========================
     album_art: (
         method: Auto,
         max_size_px: (width: 600, height: 600),
@@ -26,9 +24,7 @@
         horizontal_align: Center,
     ),
 
-    // ========================
     // Cava Visualizer
-    // ========================
     cava: (
         framerate: 60,
         autosens: true,
@@ -44,9 +40,7 @@
         ),
     ),
 
-    // ========================
     // Tabs
-    // ========================
     tabs: [
         (
             name: "Queue",
@@ -70,9 +64,7 @@
         (name: "Directories", pane: Pane(Directories)),
     ],
 
-    // ========================
     // Main Layout
-    // ========================
     layout: Split(
         direction: Vertical,
         panes: [
